@@ -1,0 +1,96 @@
+body {
+  background-color: #050b21;
+  color: #f9fdf8;
+  margin: 0;
+  font-family: "National Park", sans-serif;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  width: 100vw;
+}
+
+/* TOPBAR */
+
+.topBar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 70%;
+  padding: 0.6em;
+  padding-left: 1em;
+  margin-top: 3.5vh;
+  border-radius: 10px;
+  background-color: #1f2535;
+}
+
+.appLogo {
+  height: 30px;
+}
+
+.toggleNightMode {
+  height: 20px;
+  background-color: #2f354b;
+  padding: 10px;
+  border-radius: 7.5px;
+}
+
+/* FILTERCONTENT */
+
+.topExtensions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 71.8%;
+  margin-top: 1.2em;
+}
+
+.filterButton {
+  display: flex;
+  gap: 0.5em;
+}
+
+.filterOptions {
+  transition: color 0.2s ease-in-out;
+  transition: background-color 0.2s ease-in-out;
+  background-color: #2f364b;
+  border: 1px solid #424b65;
+  border-radius: 20px;
+  padding: 0.6em;
+  padding-left: 1em;
+  padding-right: 1em;
+  cursor: pointer;
+  color: lightgray;
+}
+
+.filterOptions:hover {
+  transition: all 0.2s ease-in-out;
+  background-color: #f45b53;
+  color: #1f2535;
+  border: 1px solid #f6635b00;
+}
+
+.extensionsList {
+  display: flex;
+  justify-content: space-between;
+  flex-flow: row wrap;
+  width: 71.8%;
+  margin-top: 2em;
+  /* background-color: #ffffff74; */
+}
+
+.extensions {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 29%;
+  height: 20vh;
+  background-color: #1f2535;
+  border-radius: 20px;
+  border: 1.3px solid #414d6b;
+  padding: 1em;
+}
