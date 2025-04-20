@@ -2,11 +2,10 @@
 const container = document.querySelector(".extensionsList");
 const filterButton = document.querySelectorAll(".filterOptions");
 
-fetch("http://localhost:3000/api/extensions")
+fetch("/api/extensions")
   .then((response) => response.json())
   .then((data) => {
     data.forEach((extension, index) => {
-      ver.js;
       const checkboxId = `checkbox${index}`;
       const extensionsHTML = `
         <div class="extensions">
@@ -16,7 +15,7 @@ fetch("http://localhost:3000/api/extensions")
               src="${extension.logo}"
               alt="logo"
             />
-            <div>
+            <div class="extensionsText">
               <h4 class="extensionsTitle">${extension.name}</h4>
               <p class="extensionsDescription">${extension.description}</p>
             </div>
