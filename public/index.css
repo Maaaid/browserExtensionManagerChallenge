@@ -2,11 +2,42 @@
   display: none;
 }
 
-body {
-  background-color: #050b21;
-  color: #f9fdf8;
+:root {
+  transition: --background 0.5s ease-in-out;
+  --background: linear-gradient(180deg, #040918 0%, #091540 100%);
+  --color-primary: #212636;
+  --color-secondary: #09153e;
+  --color-tertiary: #2f364b;
+  --color-quaternary: #c7c7c7;
+  --color-quinary: #545969;
+  --color-topLogo: #fbfdfe;
+
+  color: #fbfdfe;
   margin: 0;
   font-family: "National Park", sans-serif;
+}
+
+body.light {
+  transition: --background 0.5s ease-in-out;
+  --background: linear-gradient(180deg, #ebf2fc 0%, #eef8f9 100%);
+  --color-primary: #fbfdfe;
+  --color-secondary: #d6e2f5;
+  --color-tertiary: #ededed;
+  --color-quaternary: #545969;
+  --color-quinary: #c7c7c7;
+  --color-topLogo: #091540;
+
+  color: #1f2535;
+  margin: 0;
+  font-family: "National Park", sans-serif;
+}
+
+body {
+  background: var(--background);
+  color: var(--text-color);
+  margin: 0;
+  font-family: "National Park", sans-serif;
+  min-height: 100vh;
 }
 
 .container {
@@ -14,7 +45,7 @@ body {
   justify-content: center;
   flex-direction: column;
   align-items: center;
-  width: 100vw;
+  flex-grow: 1;
 }
 
 /* TOPBAR */
@@ -24,22 +55,45 @@ body {
   justify-content: space-between;
   align-items: center;
   width: 70%;
-  padding: 0.6em;
-  padding-left: 1em;
+  padding: 10px 0.6% 10px 1%;
   margin-top: 3.5vh;
   border-radius: 10px;
-  background-color: #1f2535;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+.topBar {
+  transition: all 0.2s ease-in-out;
+  background-color: var(--color-primary);
 }
 
 .appLogo {
-  height: 30px;
+  height: 40px;
+}
+
+.toggleNightModeButton {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: auto;
+  padding: 10px;
+  border-radius: 7.5px;
+  border: none;
+  cursor: pointer;
+}
+
+.toggleNightModeButton {
+  transition: all 0.2s ease-in-out;
+  background-color: var(--color-tertiary);
+}
+
+.toggleNightModeButton:hover {
+  transition: all 0.2s ease-in-out;
+  background-color: var(--color-quinary);
+  color: #1f2535;
 }
 
 .toggleNightMode {
-  height: 20px;
-  background-color: #2f354b;
-  padding: 10px;
-  border-radius: 7.5px;
+  height: 25px;
 }
 
 /* EXTENTIONS TITLE */
@@ -54,7 +108,7 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 71.8%;
+  width: 71.6%;
   margin-top: 40px;
 }
 
@@ -64,46 +118,52 @@ body {
 }
 
 .filterOptions {
-  transition: color 0.2s ease-in-out;
-  transition: background-color 0.2s ease-in-out;
-  background-color: #2f364b;
-  border: 1px solid #424b65;
+  border: 1px solid var(--color-secondary);
   border-radius: 20px;
   padding: 0.6em;
   padding-left: 1em;
   padding-right: 1em;
   cursor: pointer;
-  color: lightgray;
+}
+
+.filterOptions {
+  transition: all 0.2s ease-in-out;
+  color: var(--color-quaternary);
+  background-color: var(--color-primary);
 }
 
 .filterOptions:hover {
-  transition: all 0.2s ease-in-out;
-  background-color: #f45b53;
-  color: #1f2535;
-  border: 1px solid #f6635b00;
+  transition: background-color, color 0.2s ease-in-out;
+  background-color: #de473f;
+  color: var(--color-primary);
 }
 
 /* EXTENSIONS */
 
 .extensionsList {
   display: flex;
-  flex-flow: row wrap;
+  justify-content: flex-start;
+  flex-flow: wrap;
   gap: 12px;
-  width: 71.8%;
+  padding: 10px 20px;
+  width: 71.6%;
   margin-top: 20px;
-  /* background-color: #ffffff74; */
 }
 
 .extensions {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  width: 351px;
+  width: 345px;
   height: 150px;
-  background-color: #1f2535;
   border-radius: 20px;
-  border: 1.3px solid #414d6b;
   padding: 15px;
+}
+
+.extensions {
+  transition: all 0.2s ease-in-out;
+  background-color: var(--color-primary);
+  border: 1.3px solid var(--color-secondary);
 }
 
 .logoTitle {
@@ -134,7 +194,12 @@ p {
   margin: 0;
   margin-left: 15px;
   font-size: 16px;
-  color: rgba(255, 255, 255, 0.64);
+  color: var(--color-quaternary);
+}
+
+p {
+  transition: all 0.2s ease-in-out;
+  color: var(--color-quaternary);
 }
 
 /* BUTTONS ON-OFF */
@@ -159,12 +224,19 @@ p {
   display: inline-block;
   padding: 2px 9px;
   border-radius: 999px;
-  transition: background-color 0.2s ease;
-  background-color: #2f364b;
   cursor: pointer;
-  transform: all 0.3s ease;
   user-select: none;
   z-index: 100;
+}
+
+.pillLabel {
+  transition: all 0.2s ease;
+  background-color: var(--color-quinary);
+}
+
+.pillLabel:hover {
+  transition: all 0.2s ease-in-out;
+  background-color: var(--color-tertiary);
 }
 
 .buttonCircle {
@@ -172,8 +244,8 @@ p {
 }
 
 .buttonCircle {
-  width: 13px;
-  height: 13px;
+  width: 14px;
+  height: 14px;
   border-radius: 50%;
   background-color: white;
   cursor: pointer;
@@ -183,7 +255,12 @@ p {
 
 .extensionsToggleActive:checked + .pillLabel {
   transition: all 0.2s ease-in-out;
-  background-color: #f45b53;
+  background-color: #f25c54;
+}
+
+.extensionsToggleActive:checked:hover + .pillLabel {
+  transition: all 0.2s ease-in-out;
+  background-color: #de473f;
 }
 
 .extensionsToggleActive:checked + .pillLabel .buttonCircle {
@@ -198,23 +275,27 @@ p {
   align-items: center;
   padding: 4px 10px;
   border-radius: 999px;
-  border: 1.3px solid rgba(255, 255, 255, 0.333);
-  transition: background-color 0.2s ease-in-out;
-  background-color: rgba(255, 255, 255, 0);
-  color: lightgray;
+  color: var(--color-quaternary);
   cursor: pointer;
 }
 
+.extensionsRemove {
+  transition: all 0.2s ease-in-out;
+  border: 2px solid var(--color-quinary);
+  background-color: var(--color-primary);
+}
+
 .extensionsRemove:hover {
-  transition: all 0.3s ease-in-out;
-  background-color: #f45b53;
+  transition: all 0.2s ease-in-out;
+  background-color: #f25c54;
   border: 1.3px solid #f6635b00;
   color: black;
+  border: 2px solid #f25c54;
 }
 
 .extensionsRemove:active {
-  transition: all 0.3s ease-in-out;
-  background-color: #f45b53;
+  transition: all 0.2s ease-in-out;
+  background-color: #f25c54;
   border: 1.3px solid #f6635b00;
 }
 
@@ -233,18 +314,20 @@ p {
   width: 100%;
   height: 50px;
   margin-top: 50px;
-  background-color: #1f2535;
-  border-radius: 10px;
-  color: white;
+  background-color: var(--color-primary);
+  color: var(--color-topLogo);
+  border: 4px 0 0 0 solid var(--color-secondary);
+  flex-grow: 0;
+  flex-shrink: 0;
 }
 
 .attribution a {
   margin: 0;
-  color: white;
+  color: var(--color-topLogo);
   text-decoration: none;
 }
 
 .attribution p {
   margin: 0;
-  color: white;
+  color: var(--color-topLogo);
 }
