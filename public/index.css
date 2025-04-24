@@ -55,7 +55,7 @@ body {
   justify-content: space-between;
   align-items: center;
   width: 70%;
-  padding: 10px 0.6% 10px 1%;
+  padding: 10px;
   margin-top: 3.5vh;
   border-radius: 10px;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
@@ -75,6 +75,7 @@ body {
   justify-content: center;
   align-items: center;
   height: auto;
+  scale: 0.9;
   padding: 10px;
   border-radius: 7.5px;
   border: none;
@@ -94,6 +95,7 @@ body {
 
 .toggleNightMode {
   height: 25px;
+  scale: 0.9;
 }
 
 /* EXTENTIONS TITLE */
@@ -142,10 +144,8 @@ body {
 
 .extensionsList {
   display: flex;
-  justify-content: flex-start;
-  flex-flow: wrap;
-  gap: 12px;
-  padding: 10px 20px;
+  flex-flow: row wrap;
+  gap: 2.6%;
   width: 71.6%;
   margin-top: 20px;
 }
@@ -154,7 +154,7 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  width: 345px;
+  width: 32%;
   height: 150px;
   border-radius: 20px;
   padding: 15px;
@@ -330,4 +330,138 @@ p {
 .attribution p {
   margin: 0;
   color: var(--color-topLogo);
+}
+
+/* MEDIA QUERIES : */
+
+@media (max-width: 431px) and (orientation: portrait) {
+  .container {
+    gap: 25px;
+  }
+  .topBar {
+    width: 90%;
+  }
+  .topExtensions {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 90%;
+    margin: 0;
+    gap: 20px;
+  }
+  .topExtensionsTitle {
+    font-size: 32px;
+  }
+  .filterButton {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 25px;
+    width: 100%;
+    margin: 0;
+  }
+  .filterOptions {
+    scale: 1.2;
+  }
+  .extensionsList {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    width: 95%;
+    margin: 0;
+    padding: 0;
+  }
+  .extensions {
+    width: 90%;
+    height: 140px;
+    padding: 4%;
+  }
+}
+
+@media (min-width: 431px) and (max-width: 1000px) and (orientation: landscape) {
+  .topBar {
+    width: 90%;
+  }
+  .topExtensions {
+    display: flex;
+    align-items: center;
+    width: 92%;
+    margin: 0;
+    margin-top: 25px;
+    gap: 20px;
+  }
+  .extensionsList {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    width: 90%;
+    margin: 0;
+    margin-top: 25px;
+    padding: 0;
+  }
+  .extensions {
+    width: 41.5%;
+    height: 140px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1025px) {
+  .topBar {
+    width: 90%;
+  }
+  .topExtensions {
+    display: flex;
+    align-items: center;
+    width: 92%;
+    margin: 0;
+    margin-top: 25px;
+    gap: 20px;
+  }
+  .extensionsList {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    width: 92%;
+    margin: 0;
+    margin-top: 25px;
+    padding: 0;
+  }
+  .extensions {
+    width: 45.5%;
+    height: 140px;
+  }
+}
+
+@media (min-width: 1025px) and (max-width: 1440px) {
+  .topBar {
+    width: 90%;
+  }
+  .topExtensions {
+    display: flex;
+    align-items: center;
+    width: 92%;
+    margin: 0;
+    margin-top: 25px;
+    gap: 20px;
+  }
+  .extensionsList {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    width: 93%;
+    margin: 0;
+    margin-top: 25px;
+    padding: 0;
+  }
+  .extensions {
+    width: 29.9%;
+    height: 140px;
+  }
 }
