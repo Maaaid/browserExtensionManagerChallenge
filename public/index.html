@@ -24,7 +24,7 @@
     <title>Frontend Mentor | Browser extensions manager UI</title>
   </head>
   <body>
-    <div class="container">
+    <header class="header">
       <div class="topBar">
         <svg
           class="appLogo"
@@ -56,11 +56,13 @@
         <button class="toggleNightModeButton">
           <img
             class="toggleNightMode"
-            src="assets/images/icon-sun.svg"
+            src="./assets/images/icon-sun.svg"
             alt="toggleNightMode"
           />
         </button>
       </div>
+    </header>
+    <div class="container">
       <div class="topExtensions">
         <h2 class="topExtensionsTitle">Extensions List</h2>
         <div class="filterButton">
@@ -69,43 +71,19 @@
           <button class="filterOptions" data-filter="inactive">Inactive</button>
         </div>
       </div>
-      <div class="extensionsList">
-        <!-- <div class="extensions" style="display: none;">
-          <div class="logoTitle">
-            <img
-              class="extensionsLogo"
-              src="assets/images/logo-console-plus.svg"
-              alt="logo"
-            />
-            <div>
-              <h4 class="extensionsTitle">ExtensionsTest</h4>
-              <p class="extensionsDescription">Description</p>
-            </div>
-          </div>
-          <div class="extensionsButton">
-            <button class="extensionsRemove">Remove</button>
-            <div class="buttonOnOff">
-              <input type="checkbox" id="checkbox" class="extensionsToggleActive"></input>
-              <label for="checkbox" class="pillLabel">
-                <div class="buttonCircle"></div>
-              </label>  
-            </div>
-          </div>
-        </div>
-      </div> -->
-      </div>
-      <div class="attribution">
-        <p>Challenge by</p>
-        <a href="https://www.frontendmentor.io?ref=challenge"
-          ><p><b>&nbspFrontend Mentor.</b></p></a
-        >
-        <p>
-          &nbspCoded by <a href="https://github.com/Maaaid"><b>Guibao.</b></a>
-        </p>
-      </div>
-      <script src="data.js"></script>
-      <script src="index.js"></script>
+      <div class="extensionsList"></div>
     </div>
+    <div class="attribution">
+      <p>Challenge by</p>
+      <a href="https://www.frontendmentor.io?ref=challenge"
+        ><p><b>&nbspFrontend Mentor.</b></p></a
+      >
+      <p>
+        &nbspCoded by <a href="https://github.com/Maaaid"><b>Guibao.</b></a>
+      </p>
+    </div>
+    <script src="data.js"></script>
+    <script src="index.js"></script>
   </body>
 </html>
 
